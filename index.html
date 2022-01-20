@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Form - Search</title>
+		<link href="index.css" rel="stylesheet" />
+	</head>
+
+	<!-- Initialize a new AngularJS app and associate it with a module named "instantSearch"-->
+	<body ng-app='myApp'>
+	  	<form name='userForm' ng-submit='submit()' ng-controller='AddUserController'>
+		    <div id='entryForm'>
+				<h1>Sign up</h1>
+				<div ng-show='message'>{{message}}</div>
+				<div class="input">First Name: <input name='firstName' 
+				ng-model='user.first'
+				required></div>
+				<div class="input">Last name: <input name='lastName'
+				ng-model='user.last' 
+				required></div>  
+				<div class="input">Age: <input type='number'
+				name='age' 
+				ng-model='user.age'
+				ng-maxlength='3'
+				ng-min='1'
+				required></div>  
+				<div class="input">Email: <input type='email'
+				name='email'
+				ng-model='user.email'
+				required></div>
+				<br>
+
+				<input ng-submitted='clearForm()' type="submit" id="submit" 
+				value='Submit User'>
+			</div>
+	  	 	<br>
+	  
+		    <div ng-controller='RemoveUserController'>
+		      	<label ng-show='users.length'>Search: <input id='userSearch' 
+		             ng-model="filterText">
+		      	<div id='usersDisplay' ng-repeat='user in users | filter:filterText'>
+			        <span>Name: {{user.first + " " + user.last}} </span><br>
+			        <span>Age: {{user.age}} <span><br>
+			        <span>Email: {{user.email}} <span><br>
+		    		<button id='removeButton' ng-click='remove(user)'>Remove User</button>
+		     	</div>
+		    </div>
+	  	</ng-form>
+	</body>
+
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

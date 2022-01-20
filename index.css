@@ -1,0 +1,27 @@
+.input {
+  padding: 10px 0 0 5px;  
+}
+
+#userSearch {
+  margin: 20px 0 0 5px;
+}
+
+#usersDisplay {
+  border-style: outset;
+  margin: 10px;
+  padding: 10px;
+  background: #dedede; 
+  width: 200px;
+}
+
+#removeButton {
+  margin: 5px 0;
+}
+
+#entryForm {
+  border-style: outset;
+  background: #dedede;
+  width: 400px;
+  padding: 5px 0 20px 20px;
+}
+
